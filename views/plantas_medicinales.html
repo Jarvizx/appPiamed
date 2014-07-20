@@ -1,0 +1,28 @@
+<div class="modal">
+    <header class="bar bar-header bar-dark">
+        <h1 class="title">Media Player</h1>
+        <button class="button button-clear button-positive" ng-click="closeModal()">Close</button>
+    </header>
+    <ion-content has-header="true">
+        <div class="padding">
+	        <div class="row stable-bg" ng-repeat="item in appResults.resultados">
+
+				<ul class="list">
+				<hr>
+        			<li class="item"><h1> {{ item.nombre_comun }} </h1></li>
+					<li class="item"><p><strong>condiciones_de_venta:</strong> {{ item.condiciones_de_venta }}</p></li>
+					<li class="item"><p><strong>contraindicaciones_y_advertencias:</strong> {{ item.contraindicaciones_y_advertencias }}</p></li>
+					<li class="item"><p><strong>interaccion_con_otros_medicamentos:</strong> {{ item.interaccion_con_otros_medicamentos }}</p></li>
+					<li class="item"><p><strong>nombre_cientifico:</strong> {{ item.nombre_cientifico }}</p></li>
+					<li class="item"><p><strong>nombre_comun:</strong> {{ item.nombre_comun }}</p></li>
+					<li class="item"><p><strong>otros_nombres:</strong> {{ item.otros_nombres }}</p></li>
+					<li class="item"><p><strong>parte_utilizada:</strong> {{ item.parte_utilizada }}</p></li>
+					<li class="item"><p><strong>posologia:</strong> {{ item.posologia }}</p></li>
+					<li class="item"><p><strong>preparaciones_farmaceuticas:</strong> {{ item.preparaciones_farmaceuticas }}</p></li>
+					<li class="item"><p><strong>uso_aprobado:</strong> {{ item.uso_aprobado }}</p></li>
+					<li class="item"><p><strong>usos_tradicionales:</strong> {{ item.usos_tradicionales }}</p></li>
+				</ul>
+	        </div>
+        </div>
+    </ion-content>
+</div>
