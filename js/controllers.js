@@ -44,7 +44,7 @@ piamedApp.controller('SearchCtrl', function($scope, PiamedService, $ionicModal) 
 
   var doSearch = ionic.debounce(function(request){
     
-    if (request.query!=null) {
+    if (request!=null) {
 
       PiamedService.search(request).then(function(resp){
           
@@ -66,19 +66,33 @@ piamedApp.controller('SearchCtrl', function($scope, PiamedService, $ionicModal) 
     doSearch($scope.request);
   }
 
+
+  // estos modal los podemos cambiar por algo mas nativo
   $ionicModal.fromTemplateUrl('views/plantas_medicinales.html', function(modal) {
-      $scope.goModal = modal;
+      $scope.goModalPlantas = modal;
   }, {
       scope: $scope,
       animation: 'slide-in-up'
   });
 
-  $scope.checkResult = function(item) {
-    $scope.goModal.show();
+  $ionicModal.fromTemplateUrl('views/alertas.html', function(modal) {
+      $scope.goModalAlertas = modal;
+  }, {
+      scope: $scope,
+      animation: 'slide-in-up'
+  });
+
+  $scope.modalPlantas = function(item) {
+    $scope.goModalPlantas.show();
+  };
+
+  $scope.modalAlertas = function(item) {
+    $scope.goModalAlertas.show();
   };
 
   $scope.closeModal = function() {
-    $scope.goModal.hide();
+    $scope.goModalPlantas.hide();
+    $scope.goModalAlertas.hide();
   }
 
 

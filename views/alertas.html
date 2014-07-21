@@ -1,0 +1,22 @@
+<div class="modal">
+    <header class="bar bar-header bar-dark">
+        <h1 class="title">Alertas</h1>
+        <button class="button button-clear button-positive" ng-click="closeModal()">Close</button>
+    </header>
+    <ion-content has-header="true">
+        <div class="padding">
+	        <div class="row stable-bg" ng-repeat="item in appResults.resultados">
+
+				<ul class="list">
+				<hr>
+        			<li class="item"><h1> {{ item.principio_activo }} </h1></li>
+					<li class="item"><p><strong>tag:</strong> {{ item.tag }}</p></li>
+					<li class="item"><p><strong>fuente:</strong> {{ item.fuente }}</p></li>
+					<li class="item"><p><strong>descripcion:</strong> {{ item.descripcion }}</p></li>
+					<li class="item"><p><strong>concepto_comision_revisora:</strong> {{ item.concepto_comision_revisora }}</p></li>
+				</ul>
+				<p><strong>concepto_comision_revisora:</strong> <div data-ng-bind-html="item.concepto_comision_revisora"></div>
+	        </div>
+        </div>
+    </ion-content>
+</div>

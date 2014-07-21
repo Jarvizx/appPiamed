@@ -66,6 +66,7 @@ piamedApp.config(function($stateProvider, $urlRouterProvider) {
       views: {
         'menuContent' :{
           templateUrl: "templates/embarazo_y_lactancia.html",
+          controller: "SearchCtrl"
         }
       }
     })
@@ -73,7 +74,8 @@ piamedApp.config(function($stateProvider, $urlRouterProvider) {
       url: "/alertas",
       views: {
         'menuContent' :{
-          templateUrl: "templates/alertas.html"
+          templateUrl: "templates/alertas.html",
+          controller: "SearchCtrl"
         }
       }
     });
