@@ -41,6 +41,8 @@ piamedApp.controller('AppCtrl', function($scope, $ionicModal, $timeout, Settings
 piamedApp.controller('SearchCtrl', function($scope, PiamedService, $ionicModal) {
 
   $scope.request = {};
+  $scope.item = {};
+
 
   var doSearch = ionic.debounce(function(request){
     
@@ -83,10 +85,13 @@ piamedApp.controller('SearchCtrl', function($scope, PiamedService, $ionicModal) 
   });
 
   $scope.modalPlantas = function(item) {
+      console.log('datos del modal', item);
+      $scope.item = item;
     $scope.goModalPlantas.show();
   };
 
   $scope.modalAlertas = function(item) {
+      $scope.item = item;
     $scope.goModalAlertas.show();
   };
 
